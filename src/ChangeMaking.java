@@ -9,10 +9,14 @@ public class ChangeMaking {
 		//JOptionPane.showMessageDialog(null, "You entered " + num);
 		
 		int cents = (int) (num * 100);
-		int nickels = cents/5;
-		int pennies = cents - nickels * 5;
+		int quarters = cents/25;
+		int dimes = (cents - quarters * 25) / 10;
+		int nickels = (cents - quarters * 25 - dimes * 10)/5;
+		int pennies = cents - quarters * 25 - dimes * 10 - nickels * 5;
 		
 		JOptionPane.showMessageDialog(null, "$" + num + " is " 
+				+ quarters + " quarters and "
+				+ dimes + " dimes and "
 				+ nickels + " nickels and " 
 				+ pennies + " pennies.");
 		
